@@ -1,0 +1,8 @@
+SELECT 
+    owner as 拥有者,
+    segment_name as 表名,
+    round(bytes/1024/1024,2) as 表大小MB,
+    segment_type as 类型
+FROM dba_segments 
+WHERE tablespace_name = 'MDM_ORCL_DATA'
+ORDER BY bytes DESC;
